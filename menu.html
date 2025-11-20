@@ -5,23 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Menu - Blooming Chicken</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 <style>
   * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
   body {background: linear-gradient(to bottom, #fff8e5, #fff2d0); color:#333; overflow-x:hidden; position:relative;}
-
-  /* HEADER */
-  header {
-    width:100%;
-    background: linear-gradient(90deg,#ffb84d,#ff8c00);
-    padding:1rem 0;
-    text-align:center;
-    position:fixed;
-    top:0;
-    z-index:1000;
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
-  }
-  header a {color:#fff; text-decoration:none; margin:0 1.5rem; font-weight:500; transition:0.3s;}
-  header a:hover, header a.active {color:#fff7d2; text-shadow:1px 1px 5px rgba(0,0,0,0.3);}
 
   /* HERO */
   .hero {
@@ -190,11 +177,22 @@
 </head>
 <body>
 
-<header>
-  <a href="index.html">Home</a>
-   <a href="menu.html" class="active">Menu</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+<header class="site-header">
+  <div class="site-brand">
+    <a href="index.html" class="logo">
+      <img src="image/BLOOMING CHICKEN LOGO.jpg" alt="Blooming Chicken Logo">
+      <span class="brand-text">BLOOMING<br>CHICKEN</span>
+    </a>
+  </div>
+
+  <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">☰</button>
+
+  <nav id="main-nav" class="main-nav" role="navigation">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link active" href="menu.html">Menu</a>
+    <a class="nav-link" href="about.html">About</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -371,5 +369,6 @@
   window.onscroll = ()=> topBtn.style.display = (window.scrollY>300)?'block':'none';
   topBtn.onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
 </script>
+<script src="js/script.js"></script>
 </body>
 </html>

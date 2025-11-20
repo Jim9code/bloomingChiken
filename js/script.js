@@ -45,3 +45,23 @@ if (contactForm) {
     window.location.href = `mailto:yourbusiness@example.com?subject=${subject}&body=${body}`;
   });
 }
+
+// Mobile nav toggle
+(function () {
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('main-nav');
+  if (!btn || !nav) return;
+
+  btn.addEventListener('click', () => {
+    const opened = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(opened));
+  });
+
+  // close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !btn.contains(e.target)) {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
